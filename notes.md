@@ -45,5 +45,6 @@ ReactDOM.render(
 ReactDOM.render( /*#__PURE__*/React.createElement("lu", null, /*#__PURE__*/React.createElement("li", null, "Monday"), /*#__PURE__*/React.createElement("li", null, "Tuesday"), /*#__PURE__*/React.createElement("li", null, "Wednesday")), document.getElementById('root'));
 ```
 
-
+### 3 - React Components
+* Create component by creating a function that return JSX
 

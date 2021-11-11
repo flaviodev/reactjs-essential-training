@@ -28,8 +28,22 @@ React.createElement("h1", null,"Hey everyone!"), // what create
 document.getElementById('root') // where create
 );
 ```
+* Using JSX
+* [BabelJS](babeljs.io): JSX -> React calls
 
-
+```javascript
+ReactDOM.render(
+  <lu>
+    <li>Monday</li>
+    <li>Tuesday</li>
+    <li>Wednesday</li>
+  </lu>,
+  document.getElementById('root')
+);
+```
+```javascript
+ReactDOM.render( /*#__PURE__*/React.createElement("lu", null, /*#__PURE__*/React.createElement("li", null, "Monday"), /*#__PURE__*/React.createElement("li", null, "Tuesday"), /*#__PURE__*/React.createElement("li", null, "Wednesday")), document.getElementById('root'));
+```
 
 
 

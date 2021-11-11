@@ -8,12 +8,28 @@ function Header() {
   );
 }
 
+function Main() {
+  return (
+    <section>
+      <p>We serve the most delicius food around.</p>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer>
+      <p>It's true.</p>
+    </footer>
+  );
+}
+
 function App() {
   return (
     <div className="App">
       <Header />
-      <h2>Main</h2>
-      <h2>Footer</h2>
+      <Main />
+      <Footer />
     </div>
   );
 }

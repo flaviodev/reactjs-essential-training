@@ -46,5 +46,6 @@ ReactDOM.render( /*#__PURE__*/React.createElement("lu", null, /*#__PURE__*/React
 ```
 
 ### 3 - React Components
-* Create component by creating a function that return JSX
 
+* Create component by creating a function that return JSX
+* All components can receive the props (empty object), where has the values passed on component's tag

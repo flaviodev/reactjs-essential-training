@@ -40,11 +40,20 @@ const dishes = [
 
 function App() {
   return (
-    <div className="App">
-      <Header name="Cindy"/>
-      <Main adjective="amazing" dishes={dishes} />
-      <Footer year={new Date().getFullYear()}/>
-    </div>
+    <>
+      <div className="App">
+        <Header name="Cindy"/>
+        <Main adjective="amazing" dishes={dishes} />
+        <Footer year={new Date().getFullYear()}/>
+      </div>
+      <AppTwo />
+    </>
+  );
+}
+
+function AppTwo() {
+  return (
+    <h3>Second App</h3>
   );
 }
 

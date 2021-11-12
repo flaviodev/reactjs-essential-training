@@ -50,3 +50,7 @@ ReactDOM.render( /*#__PURE__*/React.createElement("lu", null, /*#__PURE__*/React
 * Create component by creating a function that return JSX
 * All components can receive the props (empty object), where has the values passed on component's tag
 * React fragments does not create additional tags to the DOM
+
+### 4 - React State
+
+* The `useEffect` Hook is useful to perform additional work behind the scenes, without affecting the appearance of the webpage.

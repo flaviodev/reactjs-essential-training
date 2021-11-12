@@ -2,32 +2,35 @@ import './App.css';
 import restaurantImg from "./restaurant.jpeg";
 
 function Header(props) {
+  const { name } = props;
   return (
     <header>
-      <h1>{props.name}'s Kitchen</h1>
+      <h1>{name}'s Kitchen</h1>
     </header>
   );
 }
 
 function Main(props) {
+  const {adjective, dishes, dishOfTheDay} = props;
   return (
     <section>
-      <p>We serve the most {props.adjective} food around.</p>
+      <p>We serve the most {adjective} food around.</p>
       <img src={restaurantImg} height={200} alt="Italian food" />
       <ul style={{ textAlign: "left" }}>
-        { props.dishes.map((dish) => (
+        { dishes.map((dish) => (
           <li key={dish.id}>{dish.title}</li>
         ))}
       </ul>
-      <h2>Dish of the day: {props.dishOfTheFay.title}</h2>
+      <h2>Dish of the day: {dishOfTheDay.title}</h2>
     </section>
   );
 }
 
 function Footer(props) {
-  return (
+  const { year } = props;
+   return (
     <footer>
-      <p>Copyright {props.year}</p>
+      <p>Copyright {year}</p>
     </footer>
   );
 }
@@ -39,7 +42,7 @@ const dishes = [
   "Pasta"
 ].map((dish, i) => ({ id: i, title: dish }));
 
-const [dishOfTheFay] = dishes;
+const [dishOfTheDay] = dishes;
 
 function App(props) {
   return (
@@ -49,7 +52,7 @@ function App(props) {
         <Main 
           adjective="amazing" 
           dishes={dishes} 
-          dishOfTheFay={dishOfTheFay}
+          dishOfTheDay={dishOfTheDay}
         />
         <Footer year={new Date().getFullYear()}/>
       </div>

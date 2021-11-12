@@ -1,7 +1,7 @@
 import { useEffect, useReducer } from "react";
 import './App.css';
-import restaurantImg from "./restaurant.jpeg";
-import pepperImg from "./pepper.png";
+import restaurant from "./restaurant.jpeg";
+import pepper from "./pepper.png";
 
 function Header(props) {
   const { name } = props;
@@ -28,22 +28,24 @@ function Main(props) {
   return (
     <section>
       <p>We serve the most {adjective} food around.</p>
-      <img src={restaurantImg} height={200} alt="Italian food" />
+      <img src={restaurant} height={200} alt="Italian food" />
       <ul style={{ textAlign: "left" }}>
         { dishes.map((dish) => (
           <li key={dish.id}>{dish.title}</li>
         ))}
       </ul>
       <h2>
-        <img src={pepperImg} hidden={!spicy} height={20} alt="Pepper" />
+        <img src={pepper} hidden={!spicy} height={20} alt="Pepper" id="pepperImg"/>
         Dish of the day: {dishOfTheDay.title} (votes: {votes})
         <button onClick={incVotes}>vote</button>
       </h2>
       <input 
+        id="spicyCheckBox"
         type="checkbox"
         value={spicy}
         onChange={spicyToogle}
-      /> Spicy
+      />
+      <label htmlFor="spicyCheckBox">Spicy</label>
     </section>
   );
 }

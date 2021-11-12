@@ -42,11 +42,7 @@ function Main(props) {
       <input 
         type="checkbox"
         value={spicy}
-<<<<<<< HEAD
         onChange={spicyToogle}
-=======
-        onChange={() => setSpicy((spicy) => !spicy)}
->>>>>>> f58f333da062ff975c24dab7ec334f94808877d0
       /> Spicy
     </section>
   );

@@ -2,13 +2,19 @@ import { useEffect, useReducer } from "react";
 import './Restaurant.css';
 import restaurant from "./restaurant.jpeg";
 import pepper from "./pepper.png";
+import { Link } from "react-router-dom";
 
 function Header(props) {
   const { name } = props;
   return (
-    <header>
-      <h1>{name}'s Kitchen</h1>
-    </header>
+    <div>
+      <nav>
+        <p><Link to="user">User</Link></p>
+      </nav>
+      <header>
+        <h1>{name}'s Kitchen</h1>
+      </header>
+    </div>
   );
 }
 
@@ -55,7 +61,6 @@ function Footer(props) {
    return (
     <footer>
       <p>Copyright {year}</p>
-      <p><a href="/user">User</a></p>
     </footer>
   );
 }

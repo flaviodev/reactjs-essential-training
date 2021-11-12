@@ -1,3 +1,4 @@
+import { useState } from "react";
 import './App.css';
 import restaurantImg from "./restaurant.jpeg";
 
@@ -12,6 +13,8 @@ function Header(props) {
 
 function Main(props) {
   const {adjective, dishes, dishOfTheDay} = props;
+  const [votes, setVotes] = useState(0);
+
   return (
     <section>
       <p>We serve the most {adjective} food around.</p>
@@ -21,7 +24,10 @@ function Main(props) {
           <li key={dish.id}>{dish.title}</li>
         ))}
       </ul>
-      <h2>Dish of the day: {dishOfTheDay.title}</h2>
+      <h2>
+        Dish of the day: {dishOfTheDay.title} (votes: {votes})
+        <button onClick={() => setVotes(votes+1)}>vote</button>
+      </h2>
     </section>
   );
 }

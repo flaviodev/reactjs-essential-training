@@ -38,7 +38,7 @@ const dishes = [
   "Pasta"
 ].map((dish, i) => ({ id: i, title: dish }));
 
-function App() {
+function App(props) {
   return (
     <>
       <div className="App">
@@ -46,7 +46,7 @@ function App() {
         <Main adjective="amazing" dishes={dishes} />
         <Footer year={new Date().getFullYear()}/>
       </div>
-      <AppTwo />
+      {props.showSecond ? <AppTwo /> : null}
     </>
   );
 }

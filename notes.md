@@ -54,3 +54,23 @@ ReactDOM.render( /*#__PURE__*/React.createElement("lu", null, /*#__PURE__*/React
 ### 4 - React State
 
 * The `useEffect` Hook is useful to perform additional work behind the scenes, without affecting the appearance of the webpage.
+
+### 5 - Asynchronous React
+
+* Fetching data with hooks (useEffect)
+* Calling API
+* Loading
+
+### 6 - Testing
+
+* Using Jest
+* React testing lib
+* Testing hooks
+
+### 7 - Router
+
+* Install react router
+```shell
+   $ yarn add react-router@next react-router-dom@next
+```
+

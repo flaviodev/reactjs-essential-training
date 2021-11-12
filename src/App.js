@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './App.css';
 import restaurantImg from "./restaurant.jpeg";
 
@@ -14,6 +14,10 @@ function Header(props) {
 function Main(props) {
   const {adjective, dishes, dishOfTheDay} = props;
   const [votes, setVotes] = useState(0);
+
+  useEffect(() => {
+    console.log(`Votes: ${votes}`);
+  }, [votes]);
 
   return (
     <section>

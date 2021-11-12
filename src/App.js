@@ -2,10 +2,13 @@ import './App.css';
 import { Routes, Route } from "react-router-dom"; 
 import Restaurant from './Restaurant';
 import User from './User';
+import { useLocation } from 'react-router';
 
 export function Error404() {
+  let location = useLocation();
+
   return (
-    <div><h1>This page dos not exist!</h1></div>
+    <div><h1>Resource not found at {location.pathname}!</h1></div>
   );
 }
 

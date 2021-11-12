@@ -19,6 +19,7 @@ function Main(props) {
           <li key={dish.id}>{dish.title}</li>
         ))}
       </ul>
+      <h2>Dish of the day: {props.dishOfTheFay.title}</h2>
     </section>
   );
 }
@@ -38,15 +39,21 @@ const dishes = [
   "Pasta"
 ].map((dish, i) => ({ id: i, title: dish }));
 
+const [dishOfTheFay] = dishes;
+
 function App(props) {
   return (
     <>
       <div className="App">
         <Header name="Cindy"/>
-        <Main adjective="amazing" dishes={dishes} />
+        <Main 
+          adjective="amazing" 
+          dishes={dishes} 
+          dishOfTheFay={dishOfTheFay}
+        />
         <Footer year={new Date().getFullYear()}/>
       </div>
-      {props.showSecond ? <AppTwo /> : null}
+      { props.showSecond ? <AppTwo /> : null }
     </>
   );
 }

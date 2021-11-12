@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import './App.css';
+import './User.css';
 
 function User(props) {
   const { login } = props;
@@ -21,13 +21,19 @@ function User(props) {
     <>
         <div className="App">
             <p>Loading...</p>
+            <p><a href="/">Home</a></p>
         </div>
     </>
   );
 
-  if(error) return <pre>{JSON.stringify(error, null, 2)}</pre>
+  if(error) return ( 
+    <>
+      <pre>{JSON.stringify(error, null, 2)}</pre>
+      <p><a href="/">Home</a></p>
+    </>
+  );
 
-  if(!data) return null;
+  if(!data) return <p><a href="/">Home</a></p>;
 
   return (
     <div className="App">
@@ -36,6 +42,7 @@ function User(props) {
             <p>{data.location}</p>
             <img src={data.avatar_url} height={90} alt="Avatar URL" />
         </header>
+        <p><a href="/">Home</a></p>
     </div>
   );
 }

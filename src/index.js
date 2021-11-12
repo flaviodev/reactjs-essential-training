@@ -2,12 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import User from './User';
+import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
-  <>
-    <App showSecond={false}/>
-    <User login="flaviodev" />
-  </>
+  <Router>
+    <App />
+  </Router>
   , document.getElementById('root')
 );

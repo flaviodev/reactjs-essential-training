@@ -70,7 +70,7 @@ ReactDOM.render( /*#__PURE__*/React.createElement("lu", null, /*#__PURE__*/React
 ### 7 - Router
 
 * Install react router
-```shell
-   $ yarn add react-router@next react-router-dom@next
+```
+   $ yarn add react-router@next react-router-dom@next history
 ```
 

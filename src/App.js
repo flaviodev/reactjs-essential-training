@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
 import './App.css';
 import restaurantImg from "./restaurant.jpeg";
 import pepperImg from "./pepper.png";
@@ -15,11 +15,15 @@ function Header(props) {
 function Main(props) {
   const {adjective, dishes, dishOfTheDay} = props;
   const [votes, setVotes] = useState(0);
-  const [spicy, setSpicy] = useState(false);
+  const [spicy, spicyToogle] = useReducer((spicy) => !spicy, false);
 
   useEffect(() => {
     console.log(`Votes: ${votes}`);
   }, [votes]);
+
+  useEffect(() => {
+    console.log(`Spicy: ${spicy}`);
+  }, [spicy]);
 
   return (
     <section>
@@ -31,14 +35,14 @@ function Main(props) {
         ))}
       </ul>
       <h2>
-        <img src={pepperImg} hidden={!spicy} height={25} alt="Pepper" />
+        <img src={pepperImg} hidden={!spicy} height={20} alt="Pepper" />
         Dish of the day: {dishOfTheDay.title} (votes: {votes})
         <button onClick={() => setVotes(votes+1)}>vote</button>
       </h2>
       <input 
         type="checkbox"
         value={spicy}
-        onChange={() => setSpicy((spicy) => !spicy)}
+        onChange={spicyToogle}
       /> Spicy
     </section>
   );

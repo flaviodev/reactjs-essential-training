@@ -14,6 +14,7 @@ function Header(props) {
 function Main(props) {
   const {adjective, dishes, dishOfTheDay} = props;
   const [votes, setVotes] = useState(0);
+  const [spicy, setSpicy] = useState(false);
 
   useEffect(() => {
     console.log(`Votes: ${votes}`);
@@ -32,6 +33,11 @@ function Main(props) {
         Dish of the day: {dishOfTheDay.title} (votes: {votes})
         <button onClick={() => setVotes(votes+1)}>vote</button>
       </h2>
+      <input 
+        type="checkbox"
+        value={spicy}
+        onChange={() => setSpicy((spicy) => !spicy)}
+      /> Spicy
     </section>
   );
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import './App.css';
 import restaurantImg from "./restaurant.jpeg";
 import pepperImg from "./pepper.png";
@@ -14,7 +14,7 @@ function Header(props) {
 
 function Main(props) {
   const {adjective, dishes, dishOfTheDay} = props;
-  const [votes, setVotes] = useState(0);
+  const [votes, incVotes] = useReducer((votes) => votes+1, 0);
   const [spicy, spicyToogle] = useReducer((spicy) => !spicy, false);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ function Main(props) {
       <h2>
         <img src={pepperImg} hidden={!spicy} height={20} alt="Pepper" />
         Dish of the day: {dishOfTheDay.title} (votes: {votes})
-        <button onClick={() => setVotes(votes+1)}>vote</button>
+        <button onClick={incVotes}>vote</button>
       </h2>
       <input 
         type="checkbox"

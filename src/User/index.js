@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import './User.css';
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function Header() {
   return (
@@ -55,6 +55,7 @@ function User(props) {
             <p>{data.location}</p>
             <img src={data.avatar_url} height={90} alt="Avatar URL" />
         </header>
+        <Outlet />
     </div>
   );
 }

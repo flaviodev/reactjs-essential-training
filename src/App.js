@@ -2,6 +2,7 @@ import './App.css';
 import { Routes, Route } from "react-router-dom"; 
 import Restaurant from './Restaurant';
 import User from './User';
+import UserLocation from './UserLocation';
 import { useLocation } from 'react-router';
 
 export function Error404() {
@@ -17,7 +18,9 @@ function App(props) {
     <div>
       <Routes>
         <Route path="/" element={<Restaurant />} />
-        <Route path="/user" element={<User login="flaviodev" />} />
+        <Route path="/user" element={<User login="flaviodev" />}> 
+          <Route path="location" element={<UserLocation />} />
+        </Route>
         <Route path="*" element={<Error404 />} />
       </Routes>
     </div>
